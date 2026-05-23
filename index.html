@@ -1,52 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Name</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N O K V I — Handmade Knit & Crochet Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <header>
-    <nav>
-      <span class="nav__logo">Project Name</span>
-      <div class="nav__links">
-        <a href="index.html">Search</a>
-        <a href="saved.html">Saved</a>
-      </div>
-      <div class="nav__actions">
-        <span id="nav-user"></span>
-        <button id="logout-btn" type="button">Logout</button>
-      </div>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">N O K V I</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html" class="active">Shop</a></li>
+        <li><a href="gallery.html">My Work</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li>
+          <a href="#" class="nav__cart-btn" id="cartOpenBtn" aria-label="Open cart">
+            <span>🛒 Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__inner">
+      <div class="hero__text">
+        <span class="hero__badge">✨Make Your Hobby Productive✨</span>
+        <h1 class="hero__title">Knits &<br><em>Crochet Magic</em></h1>
+        <p class="hero__subtitle">
+          Handcrafted pieces made one stitch at a time. Browse finished works,
+          shop quality materials, and learn through guided tutorials.
+        </p>
+        <div class="hero__actions">
+          <a href="#products" class="btn btn--primary">Shop Now</a>
+          <a href="gallery.html" class="btn btn--outline">See My Work</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <div class="hero__image-placeholder">
+  <img src="assets/basket_of_yarn.jpg" alt="Basket of yarn for knitting and crochet">
+ </div>
+    </div>
+  </section>
+
+  <!-- ===== MAIN SHOP ===== -->
   <main>
+    <div class="section" id="products">
+      <div class="section__header">
+        <h2>Browse the Shop</h2>
+        <p>Finished pieces, yarn, hooks, needles and more</p>
+      </div>
 
-    <!-- search / filter form -->
-    <section>
-      <form id="search-form">
-        <!-- add your inputs here (at least 3 different types) -->
-        <button type="submit">Search</button>
-      </form>
-    </section>
+      <!-- Filter bar -->
+      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter products by category">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="handmade">🧶 Handmade</button>
+        <button class="filter-btn" data-filter="yarn">🎀 Yarn</button>
+        <button class="filter-btn" data-filter="tools">🪡 Tools</button>
+        <button class="filter-btn" data-filter="patterns">📋 Patterns</button>
+      </div>
 
-    <!-- loading and error states -->
-    <p id="loading-msg" hidden>Loading…</p>
-    <p id="error-msg" hidden></p>
-
-    <!-- dynamically generated cards land here -->
-    <section>
-      <div id="results-grid"></div>
-    </section>
-
+      <!-- Products grid -->
+      <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+    </div>
   </main>
 
-  <footer>
-    <!-- footer content -->
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-label="Shopping cart"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__header">
+      <h2>🛒 Your Cart</h2>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__logo">N O K V I</div>
+      <nav class="footer__links">
+        <a href="index.html">Shop</a>
+        <a href="gallery.html">My Work</a>
+        <a href="tutorials.html">Tutorials</a>
+      </nav>
+      <p class="footer__copy">© 2026 N O K V I. Made with 🧶</p>
+    </div>
   </footer>
 
   <script type="module" src="js/main.js"></script>
+
+  <div class="beginner-float">
+
+  <a href="begginers.html" class="beginner-float__card">
+
+    <div class="beginner-float__icon">🧶</div>
+
+    <div>
+      <p class="beginner-float__small">
+        New here?
+      </p>
+
+      <h3 class="beginner-float__title">
+        For Absolute Beginners
+      </h3>
+    </div>
+
+  </a>
+
+</div>
+ 
+
 </body>
 </html>
