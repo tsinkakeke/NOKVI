@@ -539,7 +539,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 .beginner-float {
   position: fixed;
   top: 120px;
-  right: 30px;
+  left: 30px;
   z-index: 999;
 }
 
@@ -1231,7 +1231,7 @@ body {
   .form-grid { grid-template-columns: 1fr; }
 }
 
-/* =============================================
+/* =============================================r
    RESPONSIVE  — Mobile  ≤ 600px
    ============================================= */
 @media (max-width: 600px) {
