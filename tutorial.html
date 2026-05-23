@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorials — N O K V I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">N O K V I</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="gallery.html">My Work</a></li>
+        <li><a href="tutorials.html" class="active">Tutorials</a></li>
+        <li>
+          <a href="index.html" class="nav__cart-btn" aria-label="Go to shop cart">
+            <span>🛒 Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="section">
+      <div class="section__header">
+        <h2>📺 Tutorials</h2>
+        <p>Search for knitting and crochet tutorials from YouTube</p>
+      </div>
+
+      <!-- YouTube API key notice -->
+      <div id="apiKeyBanner" style="
+        background: #fff8e8;
+        border: 2px solid #f0c060;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.93rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+      ">
+        <span style="font-size:1.3rem;">🔑</span>
+        <div>
+          <strong>YouTube API Key Required</strong><br>
+          To load real videos, open <code>js/api.js</code> and paste your
+          <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">YouTube Data API v3</a>
+          key into the <code>YOUTUBE_API_KEY</code> constant.
+          <br><em>Without it, demo placeholder cards are shown below.</em>
+        </div>
+      </div>
+
+      <!-- Search bar -->
+      <div class="search-bar" role="search">
+        <label for="tutorialSearch" class="sr-only">Search tutorials</label>
+        <input
+          type="text"
+          id="tutorialSearch"
+          placeholder="Search tutorials… e.g. 'beginner crochet' or 'cable knit'"
+          autocomplete="off"
+        />
+        <button class="btn btn--primary" id="searchBtn">Search</button>
+      </div>
+
+      <!-- Filter bar (quick searches) -->
+      <div class="filter-bar" id="quickSearchBar" role="group" aria-label="Quick search topics">
+        <button class="filter-btn active" data-query="knitting crochet beginner tutorial">✨ Beginner</button>
+        <button class="filter-btn" data-query="crochet amigurumi tutorial">🐻 Amigurumi</button>
+        <button class="filter-btn" data-query="knitting cozy sweater tutorial">🧥 Sweaters</button>
+        <button class="filter-btn" data-query="crochet granny square blanket">🏡 Blankets</button>
+        <button class="filter-btn" data-query="knitting hat beanie pattern">🧢 Hats</button>
+      </div>
+
+      <!-- Loading state -->
+      <div class="loading-state" id="loadingState" aria-live="polite">
+        <div class="spinner"></div>
+        <p>Fetching tutorials…</p>
+      </div>
+
+      <!-- Error state -->
+      <div class="error-state" id="errorState">
+        <div class="error-state__icon">⚠️</div>
+        <p id="errorMsg">Could not load videos. Check your connection or API key.</p>
+        <button class="btn btn--outline" id="retryBtn">Try Again</button>
+      </div>
+
+      <!-- Videos grid -->
+      <div class="videos-grid" id="videosGrid" aria-live="polite"></div>
+
+    </div>
+  </main>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__logo">N O K V I</div>
+      <nav class="footer__links">
+        <a href="index.html">Shop</a>
+        <a href="gallery.html">My Work</a>
+        <a href="tutorials.html">Tutorials</a>
+      </nav>
+      <p class="footer__copy">© 2026 N O K V I. Made with 🧶</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
