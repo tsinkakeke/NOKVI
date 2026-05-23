@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Work — N O K V I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">N O K V I</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="gallery.html" class="active">My Work</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li>
+          <a href="index.html#cart" class="nav__cart-btn" id="cartOpenBtn" aria-label="Open cart">
+            <span>🛒 Cart</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <div class="section">
+
+      <!-- Upload / Add Work Form -->
+      <article class="upload-section" aria-label="Upload your work">
+        <h2>📸 Share a New Piece</h2>
+        <form id="uploadForm" novalidate>
+          <div class="form-grid">
+
+            <!-- Title — text -->
+            <div class="form-group">
+              <label for="workTitle">Title <span aria-hidden="true">*</span></label>
+              <input type="text" id="workTitle" name="workTitle" placeholder="e.g. Cozy Winter Beanie" required
+                minlength="3" maxlength="80" />
+              <span class="field-error" id="workTitleError"></span>
+            </div>
+
+            <!-- Type — select -->
+            <div class="form-group">
+              <label for="workType">Craft Type <span aria-hidden="true">*</span></label>
+              <select id="workType" name="workType" required>
+                <option value="">— Select —</option>
+                <option value="knitting">🧶 Knitting</option>
+                <option value="crochet">🪡 Crochet</option>
+                <option value="both">Both</option>
+              </select>
+              <span class="field-error" id="workTypeError"></span>
+            </div>
+
+            <!-- Time spent — number -->
+            <div class="form-group">
+              <label for="workHours">Hours Spent</label>
+              <input type="number" id="workHours" name="workHours" placeholder="e.g. 12" min="1" max="999" />
+            </div>
+
+            <!-- Yarn used — email repurposed as text with pattern -->
+            <div class="form-group">
+              <label for="workYarn">Yarn / Materials Used</label>
+              <input type="text" id="workYarn" name="workYarn" placeholder="e.g. Merino wool, 3mm hook"
+                maxlength="120" />
+            </div>
+            <!-- Upload Image -->
+            <div class="form-group form-group--full">
+              <label for="workImage">Upload Image</label>
+              <input type="file" id="workImage" name="workImage" accept="image/*" />
+            </div>
+
+            <!-- Description — textarea -->
+            <div class="form-group form-group--full">
+              <label for="workDesc">Description <span aria-hidden="true">*</span></label>
+              <textarea id="workDesc" name="workDesc"
+                placeholder="Tell us about this piece — the inspiration, technique, or who it was made for…" required
+                minlength="10" maxlength="600"></textarea>
+              <span class="field-error" id="workDescError"></span>
+            </div>
+           
+            <!-- For sale — checkbox -->
+            <div class="form-group form-group--checkbox form-group--full">
+              <input type="checkbox" id="workForSale" name="workForSale" />
+              <label for="workForSale">This piece is available for sale</label>
+            </div>
+
+            <!-- Price — shown when for-sale is checked -->
+            <div class="form-group price-group-hidden" id="priceGroup"> <label for="workPrice">Price (USD)</label>
+              <input type="number" id="workPrice" name="workPrice" placeholder="0.00" min="0.01" step="0.01" />
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn--primary">✨ Add to Gallery</button>
+            <button type="button" class="btn btn--outline" id="resetFormBtn">Clear Form</button>
+          </div>
+
+          <div class="form-feedback" id="uploadFeedback"></div>
+        </form>
+      </article>
+
+      <!-- Gallery grid -->
+      <section aria-label="My work gallery">
+        <h2 class="category-label">🎨 Gallery</h2>
+        <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__logo">N O K V I</div>
+      <nav class="footer__links">
+        <a href="index.html">Shop</a>
+        <a href="gallery.html">My Work</a>
+        <a href="tutorials.html">Tutorials</a>
+      </nav>
+      <p class="footer__copy">© 2026 N O K V I. Made with 🧶</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
