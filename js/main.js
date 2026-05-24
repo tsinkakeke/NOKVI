@@ -438,7 +438,7 @@ function initUploadForm() {
   });
 
   // Form submit — submit event with e.preventDefault()
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
 
     if (!validateUploadForm(form)) {
