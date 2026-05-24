@@ -62,7 +62,7 @@ const DEMO_VIDEOS = [
  * @returns {Promise<Array>} - Array of video objects
  */
 export async function fetchVideos(query, maxResults = 9) {
-  if (!YOUTUBE_API_KEY) 
+  if (!YOUTUBE_API_KEY) {
      // Return demo data after a simulated delay
     await new Promise(resolve => setTimeout(resolve, 800));
     return DEMO_VIDEOS;
