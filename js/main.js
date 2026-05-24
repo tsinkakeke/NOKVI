@@ -140,6 +140,7 @@ function updateCartCount() {
 }
 
 
+
 function addToCart(product) {
   cart.push({
     id: uid(),
@@ -149,11 +150,14 @@ function addToCart(product) {
     image: product.image
   });
 
+
   saveCart();
   updateCartCount();
-
+  
   showToast(`"${product.name}" added to cart!`, 'success');
 }
+
+
 
 
 function removeFromCart(cartItemId) {
