@@ -153,7 +153,7 @@ function addToCart(product) {
 
   saveCart();
   updateCartCount();
-  
+
   showToast(`"${product.name}" added to cart!`, 'success');
 }
 
@@ -494,8 +494,7 @@ function createVideoCard(video) {
 
   const thumbHTML = video.thumbnail
     ? `<img src="${video.thumbnail}" alt="${video.title} thumbnail" loading="lazy" />`
-    : `<span aria-hidden="true">▶️</span>`;
-
+    : `<img src="assets/basket_of_yarn.jpg" alt="Tutorial thumbnail" />`;
   card.innerHTML = `
     <a href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${video.title} on YouTube">
       <div class="video-card__thumb">
