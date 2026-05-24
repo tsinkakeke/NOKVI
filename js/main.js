@@ -496,7 +496,7 @@ function createVideoCard(video) {
     ? `<img src="${video.thumbnail}" alt="${video.title} thumbnail" loading="lazy" />`
     : `<img src="assets/basket_of_yarn.jpg" alt="Tutorial thumbnail" />`;
   card.innerHTML = `
-    <a href="${video.url}" target="_blank" rel="noopener noreferrer" aria-label="Watch ${video.title} on YouTube">
+    <a href="${video.url}" target="_blank" rel="noopeners noreferrer" aria-label="Watch ${video.title} on YouTube">
       <div class="video-card__thumb">
         ${thumbHTML}
         <div class="video-card__play">
