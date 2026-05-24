@@ -154,7 +154,7 @@ function addToCart(product) {
 
   showToast(`"${product.name}" added to cart!`, 'success');
 }
-}
+
 
 function removeFromCart(cartItemId) {
   cart = cart.filter(item => item.id !== cartItemId);
