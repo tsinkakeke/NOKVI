@@ -139,10 +139,7 @@ function updateCartCount() {
   });
 }
 
-function addToCart(product) {
-  cart.push({ id: uid(), productId: product.id, name: product.name, price: product.price, emoji: product.image });
-  saveCart();
-  updateCartCount();
+
 function addToCart(product) {
   cart.push({
     id: uid(),
