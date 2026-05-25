@@ -734,13 +734,14 @@ body {
 }
 
 .cart-item__image {
-  width: 60px;
-  height: 60px;
+  width: 60px !important;
+  height: 60px !important;
   object-fit: cover;
   border-radius: 8px;
   flex-shrink: 0;
-
+  
 }
+
 
 .cart-item__emoji { font-size: 2rem; }
 
