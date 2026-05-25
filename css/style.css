@@ -713,6 +713,14 @@ body {
   gap: var(--space-md);
 }
 
+.cart-item__image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
 .cart-empty {
   text-align: center;
   color: var(--color-text-muted);
