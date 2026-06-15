@@ -5,7 +5,7 @@ Starter scaffold for the Web Engineering 2026 final project. Open `index.html` i
 **Replace first:**
 - `BASE_URL` in `js/api.js` — your chosen API's base URL
 - `<title>` on all three HTML pages — your project name
-- Colour variables in `css/style.css`
+- Colour variables in `css/base.css`
 - Page names if needed — `login.html` / `saved.html` can be renamed to match your project
 
 **File structure:**
