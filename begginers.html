@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/begginers.css">
 </head>
 
+
 <body>
 
   <!-- HEADER -->
@@ -21,8 +22,7 @@
   <li><a href="begginers.html">Beginners</a></li>
   <li><a href="gallery.html">My Work</a></li>
   <li><a href="tutorials.html">Tutorials</a></li>
-  <li><a href="login.html">Login</a></li>
-</ul>
+<li><a href="saved.html" id="profileLink">Profile</a></li></ul>
     </nav>
   </header>
 
@@ -82,6 +82,17 @@
     </section>
 
   </main>
+
+
+  <script type="module" src="js/main.js"></script>
+
+  <script>
+    const user = localStorage.getItem('user');
+    const profileLink = document.getElementById('profileLink');
+    if (profileLink && user) profileLink.textContent = user;
+  </script>
+
+
 
 </body>
 </html>

@@ -3,39 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saved — Project Name</title>
+  <title>My Profile — N O K V I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
 
-  <header>
-    <nav>
-      <span class="nav__logo">Project Name</span>
-      <div class="nav__links">
-        <a href="index.html">Search</a>
-        <a href="saved.html">Saved</a>
-      </div>
-      <div class="nav__actions">
-        <span id="nav-user"></span>
-        <button id="logout-btn" type="button">Logout</button>
-      </div>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">N O K V I</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Shop</a></li>
+        <li><a href="gallery.html">My Work</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="saved.html" class="active">Profile</a></li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
   </header>
 
+  <!-- BEGINNERS FLOAT -->
+  <div class="beginner-float">
+    <a href="beginners.html" class="beginner-float__card">
+      <span class="beginner-float__icon">🧶</span>
+      <div>
+        <p class="beginner-float__small">New to knitting?</p>
+        <p class="beginner-float__title">Beginner's Guide →</p>
+      </div>
+    </a>
+  </div>
+
   <main>
+    <div class="section">
 
-    <section>
-      <h2>Saved Items</h2>
-      <p id="saved-empty" hidden>Nothing saved yet.</p>
-      <div id="saved-grid"></div>
-    </section>
+      <!-- PROFILE CARD -->
+      <div class="profile-card">
+        
+        <!-- Avatar -->
+        <div class="profile-avatar-wrapper">
+          <img id="profileAvatar" src="" alt="Profile picture" class="profile-avatar" />
+          <label for="avatarUpload" class="profile-avatar-edit" title="Change photo">✏️</label>
+          <input type="file" id="avatarUpload" accept="image/*" hidden />
+        </div>
 
+        <!-- Name -->
+        <div class="profile-info">
+          <h1 class="profile-name" id="profileName"></h1>
+          <p class="profile-joined">Member of N O K V I</p>
+
+          <!-- Edit name -->
+          <div class="profile-edit-row" id="editNameRow" hidden>
+            <input type="text" id="editNameInput" class="profile-name-input" placeholder="Enter new name" maxlength="40" />
+            <button class="btn btn--primary btn--sm" id="saveNameBtn">Save</button>
+            <button class="btn btn--outline btn--sm" id="cancelNameBtn">Cancel</button>
+          </div>
+
+          <div class="profile-actions">
+            <button class="btn btn--outline btn--sm" id="editNameBtn">✏️ Edit Name</button>
+            <button class="btn btn--outline btn--sm" id="logoutBtn">🚪 Logout</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </main>
 
-  <footer>
-    <!-- footer content -->
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <div class="footer__logo">N O K V I</div>
+      <nav class="footer__links">
+        <a href="index.html">Shop</a>
+        <a href="gallery.html">My Work</a>
+        <a href="tutorials.html">Tutorials</a>
+      </nav>
+      <p class="footer__copy">© 2026 N O K V I. Made with 🧶</p>
+    </div>
   </footer>
 
-  <script type="module" src="js/saved.js"></script>
+  <script type="module" src="js/profile.js"></script>
 </body>
 </html>
+

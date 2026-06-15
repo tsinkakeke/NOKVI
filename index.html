@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -27,7 +28,7 @@
             <span class="cart-count" id="cartCount">0</span>
           </a>
         </li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="saved.html" id="profileLink">Profile</a></li>
       </ul>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -123,10 +124,9 @@
   </footer>
 
   <script type="module" src="js/main.js"></script>
-
+<!--
   <div class="beginner-float">
-
-  <a href="begginers.html" class="beginner-float__card">
+    <a href="begginers.html" class="beginner-float__card">
 
     <div class="beginner-float__icon">🧶</div>
 
@@ -138,12 +138,21 @@
       <h3 class="beginner-float__title">
         For Absolute Beginners
       </h3>
-    </div>
+    </div> -->
 
   </a>
 
 </div>
  
+
+<script type="module" src="js/main.js"></script>
+
+  <script>
+    const user = localStorage.getItem('user');
+    const profileLink = document.getElementById('profileLink');
+    if (profileLink && user) profileLink.textContent = user;
+  </script>
+
 
 </body>
 </html>
