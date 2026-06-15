@@ -225,6 +225,7 @@ function openCart() {
   sidebar.classList.add('open');
   overlay?.classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.querySelector('.beginner-float').style.display = 'none';
 }
 
 function closeCart() {
@@ -233,6 +234,7 @@ function closeCart() {
   sidebar?.classList.remove('open');
   overlay?.classList.remove('open');
   document.body.style.overflow = '';
+  document.querySelector('.beginner-float').style.display = ''; 
 }
 
 // ─── PRODUCTS / SHOP ──────────────────────────────────────────────────────────
@@ -654,14 +656,25 @@ function initCartNav() {
 
   // Checkout button
   document.getElementById('checkoutBtn')?.addEventListener('click', () => {
-    if (cart.length === 0) { showToast('Your cart is empty!', 'error'); return; }
-    showToast('Thank you for your order! 🧶', 'success');
-    cart = [];
-    saveCart();
-    updateCartCount();
-    renderCartItems();
-    closeCart();
+  if (cart.length === 0) { showToast('Your cart is empty!', 'error'); return; }
+  
+  // Save order to localStorage
+  const orders = JSON.parse(localStorage.getItem('kn_orders') || '[]');
+  orders.unshift({
+    id: uid(),
+    date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+    items: cart.map(i => ({ name: i.name, price: i.price })),
+    total: getCartTotal(),
   });
+  localStorage.setItem('kn_orders', JSON.stringify(orders));
+
+  showToast('Thank you for your order! 🧶', 'success');
+  cart = [];
+  saveCart();
+  updateCartCount();
+  renderCartItems();
+  closeCart();
+});
 }
 
 // ─── BOOT ─────────────────────────────────────────────────────────────────────

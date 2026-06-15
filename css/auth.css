@@ -137,6 +137,71 @@
   margin-top: var(--space-xs);
 }
 
+/* =============================================
+   ORDERS SECTION
+   ============================================= */
+.orders-section {
+  max-width: 600px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.orders-empty {
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-family: var(--font-display);
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.order-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.order-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.order-card__date {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.order-card__total {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+.order-card__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.order-card__item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* GREEN FLOATER OUT */
+.beginner-float {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .profile-card {
     flex-direction: column;

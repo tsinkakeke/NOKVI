@@ -28,8 +28,12 @@
             <span class="cart-count" id="cartCount">0</span>
           </a>
         </li>
-        <li><a href="saved.html" id="profileLink">Profile</a></li>
-      </ul>
+<li>
+  <a href="saved.html" id="profileLink" class="nav__profile">
+    <img id="navAvatar" src="assets/basket_of_yarn.jpg" alt="Profile" class="nav__avatar" />
+    <span id="profileName">Profile</span>
+  </a>
+</li>      </ul>
       <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -146,13 +150,14 @@
  
 
 <script type="module" src="js/main.js"></script>
-
-  <script>
-    const user = localStorage.getItem('user');
-    const profileLink = document.getElementById('profileLink');
-    if (profileLink && user) profileLink.textContent = user;
-  </script>
-
+<script>
+  const user = localStorage.getItem('user');
+  const avatar = localStorage.getItem('userAvatar');
+  const profileName = document.getElementById('profileName');
+  const navAvatar = document.getElementById('navAvatar');
+  if (profileName && user) profileName.textContent = user;
+  if (navAvatar && avatar) navAvatar.src = avatar;
+</script>
 
 </body>
 </html>

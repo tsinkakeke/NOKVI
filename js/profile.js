@@ -68,3 +68,35 @@ logoutBtn.addEventListener('click', () => {
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger?.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+// Load orders
+function renderOrders() {
+  const ordersList = document.getElementById('ordersList');
+  if (!ordersList) return;
+
+  const orders = JSON.parse(localStorage.getItem('kn_orders') || '[]');
+
+  if (orders.length === 0) {
+    ordersList.innerHTML = '<p class="orders-empty">No orders yet — go shop something! 🧶</p>';
+    return;
+  }
+
+  ordersList.innerHTML = orders.map(order => `
+    <div class="order-card">
+      <div class="order-card__header">
+        <span class="order-card__date">📅 ${order.date}</span>
+        <span class="order-card__total">$${order.total.toFixed(2)}</span>
+      </div>
+      <div class="order-card__items">
+        ${order.items.map(item => `
+          <div class="order-card__item">
+            <span>${item.name}</span>
+            <span>$${item.price.toFixed(2)}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+renderOrders();
