@@ -1,0 +1,90 @@
+/* =============================================
+   BEGINNER FLOAT
+   ============================================= */
+.beginner-float {
+  position: fixed;
+  top: 120px;
+  left: 30px;
+  z-index: 999;
+}
+
+.beginner-float__card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgb(152, 190, 152);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(91,45,130,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 260px;
+}
+
+.beginner-float__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(91,45,130,0.35);
+}
+
+.beginner-float__icon { font-size: 2rem; }
+.beginner-float__small {
+  margin: 0;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+.beginner-float__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* =============================================
+   BEGINNERS PAGE
+   ============================================= */
+.beginner-page {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 2rem;
+}
+
+.beginner-card {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+}
+
+.beginner-title {
+  color: #2e165b;
+}
+
+.tip-box {
+  background: #f4e8ff;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.4rem;
+  background: #402862;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .beginner-float {
+    right: 15px;
+    top: auto;
+    bottom: 20px;
+  }
+
+  .beginner-float__card {
+    width: 220px;
+    padding: 0.9rem;
+  }
+}

@@ -1,0 +1,25 @@
+/* =============================================
+   AUTH / LOGIN PAGE
+   ============================================= */
+.login-container {
+  max-width: 420px;
+  margin: 100px auto;
+  padding: 2.5rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* You can add more specific login styles here as needed */
