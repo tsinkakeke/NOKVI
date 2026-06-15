@@ -212,11 +212,13 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 }
 
 .nav__avatar {
-  width: 28px;
-  height: 28px;
+  width: 28px !important;
+  height: 28px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--color-border);
+  flex-shrink: 0;
+  max-width: none;
 }
 
 /* =============================================
