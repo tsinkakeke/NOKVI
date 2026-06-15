@@ -1,6 +1,5 @@
-/* =============================================
-   BEGINNER FLOAT
-   ============================================= */
+
+/* BEGGINERS */
 .beginner-float {
   position: fixed;
   top: 120px;
@@ -12,36 +11,58 @@
   display: flex;
   align-items: center;
   gap: 14px;
+
   background: rgb(152, 190, 152);
+
   color: white;
   text-decoration: none;
+
   padding: 1rem 1.2rem;
+
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(91,45,130,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  box-shadow:
+    0 10px 30px rgba(91,45,130,0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
   width: 260px;
 }
 
 .beginner-float__card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(91,45,130,0.35);
+
+  box-shadow:
+    0 15px 40px rgba(91,45,130,0.35);
 }
 
-.beginner-float__icon { font-size: 2rem; }
+.beginner-float__icon {
+  font-size: 2rem;
+}
+
 .beginner-float__small {
   margin: 0;
   font-size: 0.8rem;
   opacity: 0.85;
 }
+
 .beginner-float__title {
   margin: 0;
   font-size: 1rem;
   font-weight: 700;
 }
 
-/* =============================================
-   BEGINNERS PAGE
-   ============================================= */
+
+/* BEGINNERS PAGE */
+
+body {
+  background: linear-gradient(135deg, #f6efff, #e7d4ff);
+  font-family: Arial, sans-serif;
+  color: #3d2457;
+}
+
 .beginner-page {
   max-width: 900px;
   margin: 80px auto;
@@ -74,9 +95,10 @@
   text-decoration: none;
   border-radius: 999px;
 }
+/* mobile */
 
-/* Mobile */
 @media (max-width: 768px) {
+
   .beginner-float {
     right: 15px;
     top: auto;
@@ -87,4 +109,3 @@
     width: 220px;
     padding: 0.9rem;
   }
-}

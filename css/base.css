@@ -269,6 +269,56 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .btn--full { width: 100%; }
 
+.beginner-float {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+.beginner-float__card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #98be98;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(91,45,130,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 220px;
+}
+
+.beginner-float__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(91,45,130,0.35);
+}
+
+.beginner-float__icon { font-size: 1.5rem; }
+
+.beginner-float__small {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.beginner-float__title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .beginner-float {
+    left: auto;
+    right: 15px;
+    top: auto;
+    bottom: 20px;
+  }
+  .beginner-float__card { width: 180px; padding: 0.8rem; }
+}
+
 /* =============================================
    SECTION WRAPPER
    ============================================= */
