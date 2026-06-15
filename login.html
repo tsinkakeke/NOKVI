@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login — Project Name</title>
+  <title>Login — N O K V I</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/auth.css">
 </head>
 <body>
 
   <main>
-
-    <form id="login-form">
-      <!-- input type="text" with validation attributes -->
-      <label for="name-input">Your name</label>
-      <input id="name-input" type="text" name="name" required minlength="2" autocomplete="name">
-
-      <p id="login-error" hidden></p>
-
-      <button type="submit">Start →</button>
-    </form>
-
+    <div class="login-container">
+      <h1>Welcome 🧶</h1>
+      <form id="login-form" class="login-form">
+        <label for="name-input">Your name</label>
+        <input id="name-input" type="text" name="name" required minlength="2" autocomplete="name">
+        <p id="login-error" hidden></p>
+        <button type="submit" class="btn btn--primary btn--full">Start →</button>
+      </form>
+    </div>
   </main>
 
   <script type="module" src="js/login.js"></script>

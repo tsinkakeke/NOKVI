@@ -445,6 +445,7 @@ function initUploadForm() {
       showFormFeedback('Please fix the errors above.', 'error');
       return;
     }
+    /*
     const imageFile = document.getElementById('workImage').files[0];
     const newItem = {
       id: uid(),
@@ -457,7 +458,30 @@ function initUploadForm() {
       forSale: form.workForSale.checked,
       price: form.workForSale.checked && form.workPrice.value ? parseFloat(form.workPrice.value) : null,
     };
+*/
 
+const imageFile = document.getElementById('workImage').files[0];
+
+const toBase64 = file => new Promise((resolve) => {
+  if (!file) { resolve(''); return; }
+  const reader = new FileReader();
+  reader.onload = () => resolve(reader.result);
+  reader.readAsDataURL(file);
+});
+
+const imageData = await toBase64(imageFile);
+
+const newItem = {
+  id: uid(),
+  title: form.workTitle.value.trim(),
+  type: form.workType.value,
+  image: imageData,
+  hours: form.workHours.value || null,
+  yarn: form.workYarn.value.trim() || null,
+  desc: form.workDesc.value.trim(),
+  forSale: form.workForSale.checked,
+  price: form.workForSale.checked && form.workPrice.value ? parseFloat(form.workPrice.value) : null,
+};
     galleryItems.unshift(newItem);
     saveGallery();
     renderGallery();

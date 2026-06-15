@@ -21,5 +21,27 @@
   flex-direction: column;
   gap: var(--space-md);
 }
+.login-form label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
 
-/* You can add more specific login styles here as needed */
+.login-form input {
+  padding: 0.65rem var(--space-md);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.login-form input:focus {
+  border-color: var(--color-primary);
+}
+
+#login-error {
+  color: var(--color-error);
+  font-size: 0.88rem;
+}
