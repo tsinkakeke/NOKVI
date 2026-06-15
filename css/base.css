@@ -271,7 +271,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
 
 .beginner-float {
   position: fixed;
-  top: 50%;
+  top: 5%;
   left: 30px;
   transform: translateY(-50%);
   z-index: 999;
